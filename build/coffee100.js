@@ -82,7 +82,11 @@
     }
 
     E100.prototype.startRunning = function() {
-      return this.clockCycle();
+      var hasHalted;
+      hasHalted = false;
+      while (!hasHalted) {
+        hasHalted = this.clockCycle();
+      }
     };
 
     E100.prototype.driverLoop = function() {
@@ -99,7 +103,8 @@
       addr2 = this.get(currentPC + 3);
       switch (opcode) {
         case 0:
-          return;
+          this.halt;
+          return true;
         case 1:
           this.add(addr0, addr1, addr2);
           break;
@@ -157,7 +162,7 @@
         case 19:
           throw new Error("'out' is totally out(lol deprecated)");
       }
-      return this.clockCycle();
+      return false;
     };
 
     E100.prototype.clearMemory = function() {
@@ -165,16 +170,17 @@
     };
 
     E100.prototype.set = function(address, value) {
-      if (address >= 0x80000000) {
-        return this.deviceRegisters[address - 0x80000000] = value;
+      if (address <= -2147483437) {
+        return this.deviceRegisters[address + 2147483648] = value;
       } else {
         return this.sram[address] = value;
       }
     };
 
     E100.prototype.get = function(address) {
-      if (address >= 0x80000000) {
-        return this.deviceRegisters[address - 0x80000000];
+      if (address <= -2147483437) {
+        console.log("Reading device address " + (address + 2147483648));
+        return this.deviceRegisters[address + 2147483648];
       }
       return this.sram[address];
     };
@@ -189,6 +195,10 @@
 
     E100.prototype.incrementPC = function() {
       return this.pc += 4;
+    };
+
+    E100.prototype.halt = function() {
+      return this.incrementPC();
     };
 
     E100.prototype.add = function(addr0, addr1, addr2) {

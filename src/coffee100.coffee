@@ -15,6 +15,7 @@ class @DisplayDriver
         b = Math.floor(Math.random()*31)
         @drawRectangle(r,g,b,x,y,x,y)
   clockTick : (deviceRegisters) ->
+
     command = deviceRegisters[96]
     response = deviceRegisters[97]
     if command is 0 and response is 0
@@ -55,14 +56,17 @@ class @E100
     @display = new window.DisplayDriver()
 
   startRunning: () ->
-    @clockCycle()
-
+    hasHalted = false
+    while not hasHalted
+      hasHalted = @clockCycle()
+    return
   driverLoop: () ->
     @display.clockTick(@deviceRegisters)
 
 
   clockCycle: () ->
     @driverLoop()
+
     currentPC = @getPC()
     opcode = @get(currentPC)
     addr0 = @get(currentPC+1)
@@ -71,7 +75,8 @@ class @E100
 
     switch opcode
       when 0
-        return
+        @halt
+        return true
       when 1
         @add addr0, addr1, addr2
       when 2
@@ -111,7 +116,7 @@ class @E100
       when 19
         throw new Error("'out' is totally out(lol deprecated)")
 
-    @clockCycle()
+    return false
 
 
 
@@ -119,14 +124,15 @@ class @E100
     @sram = new Int32Array @memoryWords
 
   set: (address, value) ->
-    if address >= 0x80000000
-      @deviceRegisters[address-0x80000000] = value
+    if address <= -2147483437
+      @deviceRegisters[(address+2147483648)] = value
     else
       @sram[address] = value
 
   get: (address) ->
-    if address >= 0x80000000
-      return @deviceRegisters[address-0x80000000]
+    if address <= -2147483437
+      console.log "Reading device address #{(address+2147483648)}"
+      return @deviceRegisters[(address+2147483648)]
     @sram[address]
 
 
@@ -139,6 +145,8 @@ class @E100
   incrementPC: () ->
     @pc += 4
 
+  halt: () ->
+    @incrementPC()
   add: (addr0, addr1, addr2) ->
     @set(addr0, @get(addr1) + @get(addr2))
     @incrementPC()
@@ -209,7 +217,6 @@ class @E100
     @incrementPC()
     @set(addr1, @getPC())
     @setPC addr0
-
 
   ret: (addr0) ->
     @setPC @get(addr0)
