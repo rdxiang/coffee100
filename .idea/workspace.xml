@@ -4,8 +4,10 @@
     <list default="true" id="08213a00-dbca-4dc8-9305-0aa9d9fad13c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/coffee100.coffee" afterPath="$PROJECT_DIR$/src/coffee100.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coffee100.js" afterPath="$PROJECT_DIR$/build/coffee100.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/drawRect.mif" afterPath="$PROJECT_DIR$/drawRect.mif" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/index.html" afterPath="$PROJECT_DIR$/build/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="coffee100.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,8 +35,13 @@
           <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="51" column="19" selection-start="1138" selection-end="1138" vertical-scroll-proportion="-31.875" vertical-offset="0" max-vertical-offset="915">
-                  <folding />
+                <state line="12" column="74" selection-start="565" selection-end="565" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="540">
+                  <folding>
+                    <element signature="n#style#0;n#canvas#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -42,7 +49,7 @@
           <file leaf-file-name="coffee100.coffee" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/coffee100.coffee">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="61" column="10" selection-start="1756" selection-end="1756" vertical-scroll-proportion="0.38290787" vertical-offset="570" max-vertical-offset="3525">
+                <state line="65" column="32" selection-start="1851" selection-end="1851" vertical-scroll-proportion="0.5005549" vertical-offset="524" max-vertical-offset="3705">
                   <folding />
                 </state>
               </provider>
@@ -82,7 +89,7 @@
           <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="13" column="13" selection-start="347" selection-end="347" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="915">
+                <state line="7" column="31" selection-start="273" selection-end="273" vertical-scroll-proportion="-1.4" vertical-offset="0" max-vertical-offset="540">
                   <folding />
                 </state>
               </provider>
@@ -91,7 +98,7 @@
           <file leaf-file-name="drawRect.mif" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/drawRect.mif">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="33" column="14" selection-start="341" selection-end="341" vertical-scroll-proportion="0.54938954" vertical-offset="0" max-vertical-offset="901">
+                <state line="32" column="14" selection-start="0" selection-end="485" vertical-scroll-proportion="0.5327414" vertical-offset="0" max-vertical-offset="901">
                   <folding />
                 </state>
               </provider>
@@ -122,6 +129,7 @@
         <option value="$PROJECT_DIR$/src/displayDriver.coffee" />
         <option value="$PROJECT_DIR$/test/coffee100_spec.coffee" />
         <option value="$PROJECT_DIR$/Gruntfile.coffee" />
+        <option value="$PROJECT_DIR$/drawRect.mif" />
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/coffee100.coffee" />
       </list>
@@ -331,7 +339,12 @@
     <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="8" selection-start="342" selection-end="342" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="330">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#canvas#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -359,7 +372,12 @@
     <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="19" selection-start="64" selection-end="64" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="225">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#canvas#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -398,23 +416,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/drawRect.mif">
+    <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="14" selection-start="341" selection-end="341" vertical-scroll-proportion="0.54938954" vertical-offset="0" max-vertical-offset="901">
-          <folding />
+        <state line="12" column="74" selection-start="565" selection-end="565" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="540">
+          <folding>
+            <element signature="n#style#0;n#canvas#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
+    <entry file="file://$PROJECT_DIR$/drawRect.mif">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="19" selection-start="1138" selection-end="1138" vertical-scroll-proportion="-31.875" vertical-offset="0" max-vertical-offset="915">
+        <state line="32" column="14" selection-start="0" selection-end="485" vertical-scroll-proportion="0.5327414" vertical-offset="0" max-vertical-offset="901">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/coffee100.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="10" selection-start="1756" selection-end="1756" vertical-scroll-proportion="0.38290787" vertical-offset="570" max-vertical-offset="3525">
+        <state line="65" column="32" selection-start="1851" selection-end="1851" vertical-scroll-proportion="0.5005549" vertical-offset="524" max-vertical-offset="3705">
           <folding />
         </state>
       </provider>

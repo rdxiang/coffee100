@@ -3,54 +3,29 @@
 <head>
 </head>
 <body>
-<h1> E100 Simulator</h1>
-<canvas width="640" height="480" id="coffee100Canvas"></canvas>
+<canvas width="640" height="480" id="coffee100Canvas" style="position: absolute; top:0px; left:0px;"></canvas>
+<div style="width: 640px; height: 480px; position: absolute; top: 480px; left: 0px;">
+    LEDs and stuff will go here
+</div>
+<div id="sidebar" style="position: absolute; top: 0px; left:640px;">
+    <h1>E100 Simulator</h1>
+    <input id="startProgram" type="button" value="Load program" onclick="e100.loadProgramFromEditor(editor);" />
+    <input id="startProgram" type="button" value="Start program" onclick="e100.startRunning();" />
+</div>
+<div id="editor" style="width:640px; height: 480px; position: absolute; left: 640px; top:480px;">
+    Paste your .mif in here.
+</div>
 <script type="text/javascript" src="../build/coffee100.js"></script>
 <script type="text/javascript">
     e100 = new E100();
     e100.display.randomizeScreen();
-    e100.set(0,12);
-    e100.set(1,39);
-    e100.set(2,2);
-    e100.set(3,37);
-    e100.set(4,12);
-    e100.set(5,33);
-    e100.set(6,3);
-    e100.set(7,37);
-    e100.set(8,12);
-    e100.set(9,34);
-    e100.set(10,4);
-    e100.set(11,37);
-    e100.set(12,12);
-    e100.set(13,35);
-    e100.set(14,5);
-    e100.set(15,37);
-    e100.set(16,12);
-    e100.set(17,36);
-    e100.set(18,6);
-    e100.set(19,37);
-    e100.set(20,12);
-    e100.set(21,32);
-    e100.set(22,7);
-    e100.set(23,37);
-    e100.set(24,12);
-    e100.set(25,39);
-    e100.set(26,0);
-    e100.set(27,37);
-    e100.set(28,0);
-    e100.set(29,0);
-    e100.set(30,0);
-    e100.set(31,0);
-    e100.set(32,0);
-    e100.set(33,0);
-    e100.set(34,0);
-    e100.set(35,200);
-    e100.set(36,200);
-    e100.set(37,-2147483552);
-    e100.set(38,0);
-    e100.set(39,1);
-    e100.set(40,0);
 
+</script>
+<script src="../lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.getSession().setMode("ace/mode/javascript");
 </script>
 </body>
 </html>

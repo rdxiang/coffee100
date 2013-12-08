@@ -63,6 +63,18 @@ class @E100
   driverLoop: () ->
     @display.clockTick(@deviceRegisters)
 
+  loadProgramFromEditor: (editor) ->
+    #this is very sensitive and buggy
+    programString =  editor.getValue()
+    beginIndex = programString.indexOf("BEGIN\n")
+    endIndex = programString.indexOf("END;")
+    extractionLength =  endIndex - (beginIndex + 8)
+    programString = programString.substr(beginIndex+6,extractionLength)
+    subStrings = programString.split(";\n")
+    for x in subStrings
+      splitLine = x.split(":")
+      e100.set parseInt(splitLine[0]),parseInt(splitLine[1])
+
 
   clockCycle: () ->
     @driverLoop()

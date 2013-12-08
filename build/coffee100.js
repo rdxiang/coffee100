@@ -93,6 +93,23 @@
       return this.display.clockTick(this.deviceRegisters);
     };
 
+    E100.prototype.loadProgramFromEditor = function(editor) {
+      var beginIndex, endIndex, extractionLength, programString, splitLine, subStrings, x, _i, _len, _results;
+      programString = editor.getValue();
+      beginIndex = programString.indexOf("BEGIN\n");
+      endIndex = programString.indexOf("END;");
+      extractionLength = endIndex - (beginIndex + 8);
+      programString = programString.substr(beginIndex + 6, extractionLength);
+      subStrings = programString.split(";\n");
+      _results = [];
+      for (_i = 0, _len = subStrings.length; _i < _len; _i++) {
+        x = subStrings[_i];
+        splitLine = x.split(":");
+        _results.push(e100.set(parseInt(splitLine[0]), parseInt(splitLine[1])));
+      }
+      return _results;
+    };
+
     E100.prototype.clockCycle = function() {
       var addr0, addr1, addr2, currentPC, opcode;
       this.driverLoop();
